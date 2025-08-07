@@ -23,5 +23,26 @@ services:
     ports: # portas de acesso
         - "3308:3306"
 
+  # PHPmyAdmin 0 Permite ver  e manipular o banco de dados
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY = 0
+      - PMA_HOST = db
+      - PMA_USER = root
+      - PMA_PASSWORD = root
+
+      # Container para testes de segurança http://127.0.0.1:7443/WebGoat
+  # usuario e senha: guest
+  webgoat:
+    image: webgoat/webgoat-8.0
+    container_name: webgoat
+    restart: unless-stopped
+    ports:
+      - "7443:8080"
+
 volumes:
   mysql:  
