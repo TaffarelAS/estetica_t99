@@ -36,11 +36,11 @@ Criar um sistema web/mobile de agendamento e controle de clientes e processo par
 
 **Obs:** Usar de 1 a 2 horas por ponto ( 2h pleno | Jr 4h ). <br>
 Valor da sua hora: Jr R$ 25,00 | Pleno R$ 50,00 | Sênior R$ 80,00
---
+
 Média de Mercado: Salário do Jr R$ 3500,00 / 120h = R$ 30,00/hora
---
+
 Adicionando a Margem de Lucro = 30,00/hora * 1,3 = 40,00/hora
---
+
 Adicionar se for o caso os Impostos = 40,00 * 1,15
 
 ## ✅ Tarefas 
@@ -69,6 +69,15 @@ São campos onde os clientes se cadastram para receber descontos, novidades, etc
 | Criar e Iniciar os containers | `docker compose up -d --build` |
 | Parar containers | `docker stop numeroContainer`|
 | Remover o container | `docker rm numeroContainer`|
+| Ver os containers rodando/Desligados | `docker ps -a` |
+| Acessando o terminal do container | `docker compose run nome/ID bash` |
+| Instala pacotes no Debian/Ubuntu | `apt install nome` |
+| Instala pacotes no Alpine | `apk add nome` |
+| **Comandos do Composer** |  |
+| Executando o composer | `docker compose exec web composer --version` |
+| Criando o projeto Laravel | `docker compose exec web composer create-project laravel/laravel .`  |
+| Descobrir seu ID | `echo $UID` ou `id -u` |
+
 
 ## Algoritmo - coleta de e-mails (leads)
 
